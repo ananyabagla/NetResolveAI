@@ -1,0 +1,10 @@
+# Virtual Environments
+backend/.venv/
+backend/__pycache__/
+
+# Node Modules
+frontend/node_modules/
+frontend/dist/
+
+# Secrets
+backend/.env
