@@ -32,7 +32,7 @@ export default function App() {
       });
       setFileStatus(`${file.name} loaded successfully.`);
       
-      const res = await axios.get('http://localhost:8000/api/telemetry');
+      const res = await axios.get('https://netresolveai.onrender.com/api/telemetry');
       setData(res.data);
       
       // Auto-detect numeric columns from the new dataset and plot the first two by default
@@ -58,7 +58,7 @@ export default function App() {
     setLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:8000/api/chat', { query: userMessage.text });
+      const response = await axios.post('https://netresolveai.onrender.com/api/chat', { query: userMessage.text });
       let aiText = response.data.response;
 
       // NEW: Intercept AI Action Tags for Graph Control
