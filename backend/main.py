@@ -86,11 +86,13 @@ app = FastAPI(title="NetResolve AI - Groq LangGraph API")
 # Ensure this block is placed exactly here, BEFORE your routes (@app.post, etc.)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],           # Allows all origins
-    allow_credentials=True,        # Required for some browser requests
-    allow_methods=["*"],           # Allows all methods (GET, POST, OPTIONS, etc.)
-    allow_headers=["*"],           # Allows all headers
-    expose_headers=["*"]           # Ensures the browser can read the response headers
+    allow_origins=[
+        "https://net-resolve-ai.vercel.app",  # Your live Vercel frontend
+        "http://localhost:5173"               # Your local frontend (for testing)
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 class ChatRequest(BaseModel):
     query: str
