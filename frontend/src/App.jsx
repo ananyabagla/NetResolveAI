@@ -27,7 +27,7 @@ export default function App() {
     setFileStatus(`Uploading ${file.name}...`);
 
     try {
-      await axios.post('http://localhost:8000/api/upload', formData, {
+      await axios.post('https://netresolve-backend.onrender.com/api/upload', formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       setFileStatus(`${file.name} loaded successfully.`);
